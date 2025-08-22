@@ -34,7 +34,7 @@ code {
 
 #navbar {
   background-color: var(--gsp-grey2);
-  height: 50px;
+  height: 58px;
   top: 0;
   margin-top: 0;
   position: sticky;
@@ -56,8 +56,9 @@ code {
 }
 
 #navbar-logo {
-  width: 405px;
+  width: 365px;
   text-align: center;
+  font-size: 14.5px;
 }
 
 .navbar-logo-a {
@@ -166,6 +167,14 @@ a:visited {
    -webkit-user-select: none;
    -ms-user-select: none;
    user-select: none;
+}
+
+.grey_highlight {
+  color: var(--gsp-grey1);
+}
+
+.underline_highlight {
+  text-decoration:underline;
 }
 
 /*Testing*/

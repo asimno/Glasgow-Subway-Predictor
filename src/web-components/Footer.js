@@ -4,7 +4,7 @@ function Footer() {
     return (
         <>
             <footer>
-                work in progress
+                Website footer, has a couple of links throughout the site.
             </footer>
         </>
     )

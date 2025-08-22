@@ -11,13 +11,13 @@
 #content-block {
     width: 100%;
     height: 550px;
-    background-color: var(--gsp-orange1);
+    background-color: var(--gsp-orange2);
     position: relative;
 }
 
 #content-block-text-left {
     position: absolute;
-    max-width: 660px;
+    max-width: 600px;
     max-height: 500px;
     word-wrap: break-word;
     top: 44%;
@@ -64,6 +64,20 @@
     background-color: var(--gsp-grey0);
     width: 100%;
     height: 850px;
+}
+
+/* Unaffiliated */
+
+#unaffiliated-notice {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gsp-orange1);
+    font-family: "Klavika Light";
+    color: var(--gsp-grey1);
+    font-size: 60%;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 /*Mobile Support*/
