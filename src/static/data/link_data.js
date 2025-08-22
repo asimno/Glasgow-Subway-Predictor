@@ -10,5 +10,5 @@ export const footer_items = {
 }
 
 export const extra_items = {
-    "Github": "https://github.com/asimno",
+    "Github": "https://github.com/asimno/Glasgow-Subway-Predictor",
 }

@@ -34,7 +34,7 @@ code {
 
 #navbar {
   background-color: var(--gsp-grey2);
-  height: 65px;
+  height: 50px;
   top: 0;
   margin-top: 0;
   position: sticky;
@@ -100,6 +100,37 @@ code {
   height: 160%;
 }
 
+/*Mobile support*/
+
+.mobile-vis {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .mobile-vis {
+    display:flex;
+  }
+
+  .mobile-nonvis {
+    display: none;
+  }
+
+  
+  /* Custom */
+
+  #navbar-items {
+    justify-content:right;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #navbar-logo h2 {
+    display: none;
+  }
+}
+
+
 /*Footer*/
 
 footer {
@@ -111,11 +142,6 @@ footer {
 
 .flex {
   display:flex;
-}
-
-.side-margin {
-  margin-left: 6px;
-  margin-right: 6px;
 }
 
 .hoverable {
