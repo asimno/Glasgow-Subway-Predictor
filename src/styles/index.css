@@ -1,0 +1,151 @@
+@import url(site-colors.css);
+
+@font-face {
+    font-family: "Klavika Bold";
+    src: url(./font/klavika-bold.otf)
+}
+
+@font-face {
+    font-family: "Klavika Medium";
+    src: url(./font/klavika-medium.otf)
+}
+
+@font-face {
+    font-family: "Klavika Light";
+    src: url(./font/klavika-light.otf)
+}
+
+body {
+  margin: 0;
+  font-family: 'Klavika Medium';
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*Navbar*/
+
+#navbar {
+  background-color: var(--gsp-grey2);
+  height: 65px;
+  top: 0;
+  margin-top: 0;
+  position: sticky;
+  padding: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+  align-items: center;
+  justify-content: space-evenly;
+  -moz-box-shadow: 0 0 25px var(--gsp-orange2);
+  -webkit-box-shadow: 0 0 25px var(--gsp-orange2);
+  box-shadow: 0 0 25px var(--gsp-orange2);
+  z-index: 5;
+}
+
+.navbar-item {
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar-logo {
+  width: 405px;
+  text-align: center;
+}
+
+.navbar-logo-a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#navbar-subway-logo {
+  margin-top: 25px;
+  height: 150%;
+  background-color: var(--gsp-grey2);
+  border-radius: 100%;
+  border-width: 7px;
+  border-color: var(--gsp-grey2);
+  border-style: solid;
+}
+
+#navbar-items {
+  width: 350px;
+  font-size: 18px;
+}
+
+.logo-link {
+  height: 50%;
+  filter: invert(100%) sepia(4%) saturate(15%) hue-rotate(82deg) brightness(106%) contrast(104%);
+  overflow: visible;
+}
+
+.navbar-link:hover {
+  color: var(--gsp-orange1);
+}
+
+.logo-link:hover {
+  filter: invert(58%) sepia(42%) saturate(5494%) hue-rotate(1deg) brightness(104%) contrast(92%);
+  cursor: pointer;
+}
+
+#navbar-subway-logo:hover {
+  height: 160%;
+}
+
+/*Footer*/
+
+footer {
+  background-color: var(--gsp-grey4);
+  height: 350px;
+}
+
+/* Resusables */
+
+.flex {
+  display:flex;
+}
+
+.side-margin {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.hoverable {
+  transition: 0.3s;
+}
+
+.hoverable:hover {
+  cursor: pointer;
+}
+
+a {
+   text-decoration: none; 
+}
+
+a:visited { 
+ color: white;
+}
+
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+/*Testing*/
+
+.test-box {
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}

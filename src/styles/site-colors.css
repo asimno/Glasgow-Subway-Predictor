@@ -1,0 +1,13 @@
+:root { 
+    --gsp-grey0: #665f61;
+    --gsp-grey1: #4e4b4c;
+    --gsp-grey2: #3a3839;
+    --gsp-grey3: #2b292a;
+    --gsp-grey4: #201e20;
+    --gsp-orange0: #ff9f0e;
+    --gsp-orange1: #f57d0c;
+    --gsp-orange2: #df610d;
+    --gsp-orange3: #dd4e0c;
+}
+
+/* Site-wide colourations to consistently style the site as needed.*/
