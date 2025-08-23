@@ -1,12 +1,12 @@
 export const navbar_items = {
-    "Map":"WIP",
-    "Analytics":"WIP",
-    "API Documentation":"WIP",
+    "Map":"",
+    "Analytics":"",
+    "API Documentation":"",
 }
 
 export const footer_items = Object.assign({},navbar_items,{
-    "Home": "WIP",
-    "About": "WIP",
+    "Home": "",
+    "About": "",
     "Timetable Source": "https://www.railwaydata.co.uk/timetables/glasgow/aug24/GlasgowSubwayTimetable.pdf",
     "Who Made This": "https://github.com/asimno",
 })

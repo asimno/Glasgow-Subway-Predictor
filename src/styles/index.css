@@ -38,9 +38,7 @@ code {
   top: 0;
   margin-top: 0;
   position: sticky;
-  padding: 10px;
-  padding-left: 45px;
-  padding-right: 45px;
+  padding: 5px;
   align-items: center;
   justify-content: space-evenly;
   -moz-box-shadow: 0 0 25px var(--gsp-orange2);

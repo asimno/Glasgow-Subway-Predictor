@@ -6,7 +6,7 @@ function Navbar() {
         <>
             <div class="flex" id="navbar">
                 <div id="navbar-logo" class="flex navbar-item side-margin">
-                    <a class="navbar-logo-a side-margin" href=""><img class="hoverable unselectable" id="navbar-subway-logo" src="./media/gs-logo.svg"/></a>
+                    <a class="navbar-logo-a side-margin" href=""><img class="hoverable unselectable" id="navbar-subway-logo" src={`${process.env.PUBLIC_URL}/media/gs-logo.svg`}/></a>
                     <h2 class="side-margin unselectable">Glasgow Subway Predictor</h2>
                 </div>
                 <div id="navbar-items" class="flex navbar-item side-margin">
