@@ -38,7 +38,7 @@ code {
   top: 0;
   margin-top: 0;
   position: sticky;
-  padding: 5px;
+  padding: 8px;
   align-items: center;
   justify-content: space-evenly;
   -moz-box-shadow: 0 0 25px var(--gsp-orange2);
@@ -56,18 +56,20 @@ code {
 #navbar-logo {
   width: 365px;
   text-align: center;
-  font-size: 14.5px;
+  font-size: 13.5px;
+  justify-content:left;
 }
 
 .navbar-logo-a {
   height: 100%;
   display: flex;
   align-items: center;
+  padding-right: 7px;
 }
 
 #navbar-subway-logo {
   margin-top: 25px;
-  height: 150%;
+  height: 135%;
   background-color: var(--gsp-grey2);
   border-radius: 100%;
   border-width: 7px;
@@ -96,23 +98,43 @@ code {
 }
 
 #navbar-subway-logo:hover {
-  height: 160%;
+  height: 145%;
+}
+
+/* Dropdown dropdownURL */
+
+#dropdownURL {
+  width: 100%;
+  text-align: center;
+  border-width:1px;
+  border-style:solid;
+  border-color: var(--gsp-grey0);
+  background-color:var(--gsp-grey1);
+}
+
+#dropdownURL a {
+  width: 100%;
+  height: 100%;
+}
+
+#dropdownURL a:hover {
+  background-color:var(--gsp-grey2);
 }
 
 /*Mobile support*/
 
 .mobile-vis {
-  display: none;
+  display: none !important;
 }
 
 
 @media only screen and (max-width: 1000px) {
   .mobile-vis {
-    display:flex;
+    display:flex !important;
   }
 
   .mobile-nonvis {
-    display: none;
+    display: none !important;
   }
 
   
