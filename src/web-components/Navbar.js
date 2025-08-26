@@ -14,6 +14,7 @@ function Navbar() {
 
     return (
         <>
+        <div id="greater-navbar">
             <div class="flex" id="navbar">
                 <div id="navbar-logo" class="flex navbar-item side-margin">
                     <a class="navbar-logo-a side-margin" href=""><img class="hoverable unselectable" id="navbar-subway-logo" src={`${process.env.PUBLIC_URL}/media/gs-logo.svg`}/></a>
@@ -26,6 +27,7 @@ function Navbar() {
                 </div>
             </div>
             <LinkDropdown urlDictionary={navbar_items} visible={dropdownVis}/>
+        </div>
         </>
     )
 }
