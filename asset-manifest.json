@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Glasgow-Subway-Predictor/static/css/main.d88cd3ae.css",
-    "main.js": "/Glasgow-Subway-Predictor/static/js/main.9a184dbc.js",
+    "main.css": "/Glasgow-Subway-Predictor/static/css/main.0d2a96b9.css",
+    "main.js": "/Glasgow-Subway-Predictor/static/js/main.de2291b2.js",
     "static/js/453.c56fe051.chunk.js": "/Glasgow-Subway-Predictor/static/js/453.c56fe051.chunk.js",
     "static/media/klavika-bold.otf": "/Glasgow-Subway-Predictor/static/media/klavika-bold.531f1f08258c12326b4f.otf",
     "static/media/klavika-light.otf": "/Glasgow-Subway-Predictor/static/media/klavika-light.1a4c16014521cb7ebab5.otf",
     "static/media/klavika-medium.otf": "/Glasgow-Subway-Predictor/static/media/klavika-medium.03828eb078007ed6b6c1.otf",
     "index.html": "/Glasgow-Subway-Predictor/index.html",
     "static/media/content-block-mask.svg": "/Glasgow-Subway-Predictor/static/media/content-block-mask.739af57fe31ecdb003d4.svg",
-    "main.d88cd3ae.css.map": "/Glasgow-Subway-Predictor/static/css/main.d88cd3ae.css.map",
-    "main.9a184dbc.js.map": "/Glasgow-Subway-Predictor/static/js/main.9a184dbc.js.map",
+    "main.0d2a96b9.css.map": "/Glasgow-Subway-Predictor/static/css/main.0d2a96b9.css.map",
+    "main.de2291b2.js.map": "/Glasgow-Subway-Predictor/static/js/main.de2291b2.js.map",
     "453.c56fe051.chunk.js.map": "/Glasgow-Subway-Predictor/static/js/453.c56fe051.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d88cd3ae.css",
-    "static/js/main.9a184dbc.js"
+    "static/css/main.0d2a96b9.css",
+    "static/js/main.de2291b2.js"
   ]
 }
