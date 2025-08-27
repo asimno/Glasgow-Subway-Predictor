@@ -45,9 +45,17 @@
 /* Map */
 
 #map-block {
-    background-color: var(--gsp-grey1);
+    background-color: var(--gsp-grey2);
     width: 100%;
-    height: 900px;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+#map-render {
+    width: 80%;
 }
 
 /* MINI Analytics */
