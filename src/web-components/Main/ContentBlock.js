@@ -1,7 +1,9 @@
 import '../../styles/App.css';
 
+
+
 export default function ContentBlock1(props) {
-    if (props.side == "left") {
+    if (props.side === "left") {
         return (
             <>
                 <div id="content-block">

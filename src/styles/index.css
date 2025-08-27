@@ -23,6 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   scroll-behavior: smooth;
+  background-color: var(--gsp-grey2);
 }
 
 code {
@@ -113,6 +114,7 @@ code {
   width: 100%;
   text-align: center;
   border-width:1px;
+  box-sizing: border-box;
   border-style:solid;
   border-color: var(--gsp-grey0);
   background-color:var(--gsp-grey1);

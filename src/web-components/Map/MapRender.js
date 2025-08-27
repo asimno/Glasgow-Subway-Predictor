@@ -1,10 +1,18 @@
 import '../../styles/App.css';
-
+import PathDivRender from './PathDivRender.js';
+import Station from './Station.js';
+import { useRef } from 'react';
+ 
 export default function MapRender() {
+        const outerPathRef = useRef(null);
+        const middlePathRef = useRef(null);
+        const innerPathRef = useRef(null);
+
         return (
             <>
                 <div id="map-render">
-                <svg version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1280 720">
+                <PathDivRender renderedComp={Station} renderedCompProps={{"Station": "St Enoch"}}pathRef={middlePathRef} perc={0}/>
+                <svg version="1.1" preserveAspectRatio="none" x="0px" y="0px" width="1280px" height="720px" viewBox="0 0 1280 720">
                 <defs>
                 <g id="Layer3_0_FILL">
                 <path fill="#B7BAB8" stroke="none" d="
@@ -194,20 +202,55 @@ export default function MapRender() {
                 Q 809.9861328125 280.401953125 811.2 280.45 Z"/>
                 </g>
 
-                <path id="Layer2_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
-                M 381.7 84.5
-                Q 366.75 84.55 344.45 88.3 343.75 88.35 343.15 88.5 296.75 96.55 247.9 123.5 246.95 124 246.1 124.6 198.65 151.8 157.85 212.6 157.7 212.9 157.55 213.1 131.15 253.2 121.05 303.45 115.65 329.75 114.95 359 114.95 360 114.95 361 115.65 390.2 121.05 416.65 131.15 466.7 157.45 506.95 157.9 507.6 158.4 508.35 199.3 568.9 246.85 596.05 247.4 596.35 247.9 596.65 296.8 623.55 343.15 631.65 343.9 631.7 344.6 631.85 366.8 635.45 381.7 635.55
-                L 898.4 635.55
-                Q 913.1 635.45 935.4 631.85 936.05 631.7 936.75 631.65 982.6 623.6 1030.95 597.2
-                L 1032.05 596.65
-                Q 1032.6 596.3 1033.1 596 1080.9 568.7 1122.15 507.55 1122.8 506.55 1123.45 505.45 1148.95 465.8 1158.95 416.7
-                L 1159.05 416.5
-                Q 1164.25 390.2 1165.05 361.15 1165.05 360 1165.05 358.95 1164.25 329.8 1159.05 303.6
-                L 1158.95 303.45
-                Q 1148.9 254.1 1123.3 214.5 1122.75 213.55 1122.15 212.6 1080.9 151.25 1033.1 124.1 1032.05 123.45 1030.95 122.95 982.6 96.4 936.85 88.5 936.2 88.35 935.55 88.3 913.2 84.55 898.4 84.5
-                L 381.7 84.5 Z"/>
 
-                <path id="Layer1_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                <OuterPath ref={outerPathRef}/>
+                <MiddlePath ref={middlePathRef}/>
+                <InnerPath ref={innerPathRef}/>
+            
+                </defs>
+
+                <g transform="matrix( 1.437255859375, 0, 0, 1.437255859375, -266.15,-198.8) ">
+                <use xlinkHref="#Layer3_0_FILL"/>
+                </g>
+
+                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                <use xlinkHref="#Layer2_0_1_STROKES"/>
+                </g>
+
+                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                <use xlinkHref="#Layer1_0_1_STROKES"/>
+                </g>
+
+                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
+                <use xlinkHref="#Layer0_0_1_STROKES"/>
+                </g>
+                </svg>
+                </div>
+            </>
+        )
+}
+
+function OuterPath(props) {
+    return (
+        <path ref={props.ref} id="Layer2_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+        M 381.7 84.5
+        Q 366.75 84.55 344.45 88.3 343.75 88.35 343.15 88.5 296.75 96.55 247.9 123.5 246.95 124 246.1 124.6 198.65 151.8 157.85 212.6 157.7 212.9 157.55 213.1 131.15 253.2 121.05 303.45 115.65 329.75 114.95 359 114.95 360 114.95 361 115.65 390.2 121.05 416.65 131.15 466.7 157.45 506.95 157.9 507.6 158.4 508.35 199.3 568.9 246.85 596.05 247.4 596.35 247.9 596.65 296.8 623.55 343.15 631.65 343.9 631.7 344.6 631.85 366.8 635.45 381.7 635.55
+        L 898.4 635.55
+        Q 913.1 635.45 935.4 631.85 936.05 631.7 936.75 631.65 982.6 623.6 1030.95 597.2
+        L 1032.05 596.65
+        Q 1032.6 596.3 1033.1 596 1080.9 568.7 1122.15 507.55 1122.8 506.55 1123.45 505.45 1148.95 465.8 1158.95 416.7
+        L 1159.05 416.5
+        Q 1164.25 390.2 1165.05 361.15 1165.05 360 1165.05 358.95 1164.25 329.8 1159.05 303.6
+        L 1158.95 303.45
+        Q 1148.9 254.1 1123.3 214.5 1122.75 213.55 1122.15 212.6 1080.9 151.25 1033.1 124.1 1032.05 123.45 1030.95 122.95 982.6 96.4 936.85 88.5 936.2 88.35 935.55 88.3 913.2 84.55 898.4 84.5
+        L 381.7 84.5 Z"/>
+    )
+}
+
+function MiddlePath(props) {
+    return (
+        <>
+<path ref={props.ref} id="Layer1_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
                 M 267.05 158.45
                 Q 310.25 134.65 351.05 127.6
                 L 350.95 127.6
@@ -237,8 +280,13 @@ export default function MapRender() {
                 L 190.95 234.8
                 Q 226.25 182.2 267 158.5
                 L 267.05 158.45 Z"/>
+    </>
+            )
+}
 
-                <path id="Layer0_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+function InnerPath(props) {
+    return (
+                <path ref={props.ref} id="Layer0_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
                 M 357.9 166.9
                 Q 358.5 166.75 359.2 166.7 373.05 164.45 382.6 164.25
                 L 897.45 164.25
@@ -249,25 +297,11 @@ export default function MapRender() {
                 Q 373.05 555.55 359.05 553.4 358.5 553.25 357.95 553.15 323.85 547.05 287.75 527.5 287.4 527.3 287.1 527.15 253.5 506.9 224.1 463.05 206.2 435.3 199.25 400.9
                 L 199.25 400.8
                 Q 195.35 381.4 194.75 360 195.35 338.6 199.25 319.25 206.2 284.7 224.1 257.05 253.5 213.2 287.05 193 287.25 192.85 287.4 192.8 323.6 173 357.9 166.9 Z"/>
-                </defs>
+    )
+}
 
-                <g transform="matrix( 1.437255859375, 0, 0, 1.437255859375, -266.15,-198.8) ">
-                <use xlinkHref="#Layer3_0_FILL"/>
-                </g>
+//--
 
-                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <use xlinkHref="#Layer2_0_1_STROKES"/>
-                </g>
+function StationRenderer() {
 
-                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <use xlinkHref="#Layer1_0_1_STROKES"/>
-                </g>
-
-                <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <use xlinkHref="#Layer0_0_1_STROKES"/>
-                </g>
-                </svg>
-                </div>
-            </>
-        )
 }

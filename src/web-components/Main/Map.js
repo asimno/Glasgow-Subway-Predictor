@@ -1,5 +1,5 @@
 import '../../styles/App.css';
-import MapRender from './MapRender.js'
+import MapRender from '../Map/MapRender.js'
 
 export default function Map() {
         return (
