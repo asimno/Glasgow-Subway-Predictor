@@ -1,4 +1,4 @@
-[
+export const stations = [
     "St. George's Cross",
     "Cowcaddens",
     "Buchanan Street",

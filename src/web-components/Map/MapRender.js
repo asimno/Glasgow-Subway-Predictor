@@ -1,18 +1,25 @@
 import '../../styles/App.css';
 import PathDivRender from './PathDivRender.js';
 import Station from './Station.js';
-import { useRef } from 'react';
+import { stations } from '../../static/data/Stations.js';
+import { useRef, useEffect } from 'react';
  
 export default function MapRender() {
         const outerPathRef = useRef(null);
         const middlePathRef = useRef(null);
         const innerPathRef = useRef(null);
 
+        const arr = [];
+        for (var i=0;i<stations.length;i++) {
+                const stationPercValue=((100/(stations.length))*i)+(100/(stations.length));
+                arr.push(<PathDivRender renderedComp={Station} renderedCompProps={{"Station": stations[i]}} pathRef={middlePathRef} perc={stationPercValue}/>);
+        }
+
         return (
             <>
                 <div id="map-render">
-                <PathDivRender renderedComp={Station} renderedCompProps={{"Station": "St Enoch"}}pathRef={middlePathRef} perc={0}/>
-                <svg version="1.1" preserveAspectRatio="none" x="0px" y="0px" width="1280px" height="720px" viewBox="0 0 1280 720">
+                {arr}
+                <svg id="map-svg" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1280 720">
                 <defs>
                 <g id="Layer3_0_FILL">
                 <path fill="#B7BAB8" stroke="none" d="
@@ -279,7 +286,8 @@ function MiddlePath(props) {
                 Q 168.7 451.15 160.15 408.75 155.45 385.6 154.8 360 155.45 334.4 160.15 311.35 168.7 268.9 190.9 234.9
                 L 190.95 234.8
                 Q 226.25 182.2 267 158.5
-                L 267.05 158.45 Z"/>
+                L 267.05 158.45 Z">
+                    </path>
     </>
             )
 }
@@ -298,10 +306,4 @@ function InnerPath(props) {
                 L 199.25 400.8
                 Q 195.35 381.4 194.75 360 195.35 338.6 199.25 319.25 206.2 284.7 224.1 257.05 253.5 213.2 287.05 193 287.25 192.85 287.4 192.8 323.6 173 357.9 166.9 Z"/>
     )
-}
-
-//--
-
-function StationRenderer() {
-
 }

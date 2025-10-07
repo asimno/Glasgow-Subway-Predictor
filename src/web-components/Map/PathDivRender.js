@@ -6,6 +6,7 @@ import {useState, useEffect} from 'react';
 export default function PathDivRender(props) 
 {
     const [isReady, setIsReady] = useState(false);
+    const [pos,setPos] = useState({left:0,top:0});
 
     useEffect(() => {
         if (props.pathRef&&props.pathRef.current) {
@@ -13,19 +14,32 @@ export default function PathDivRender(props)
         }
   }, [[props.pathRef]]);
 
+      const updatePosition = () => {
+        const pathLength = props.pathRef.current.getTotalLength();
+        const pointLoc = props.pathRef.current.getPointAtLength((((props.perc+15)%100)*0.01)*pathLength);
+
+        const ctm = props.pathRef.current.getScreenCTM();
+        const screenPoint = new DOMPoint(pointLoc.x, pointLoc.y).matrixTransform(ctm);
+
+        const finalx = screenPoint.x;
+        const finaly = screenPoint.y;
+
+        setPos({left:finalx,top:finaly});
+    }
+
+    useEffect(() => {
+        updatePosition();
+
+        window.addEventListener("resize",updatePosition);
+    },[])
+
     if (!isReady) {
         return (<></>);
     }
 
-    const pathLength = props.pathRef.current.getTotalLength();
-    const pointLoc = props.pathRef.current.getPointAtLength((((props.perc+15)%100)*0.01)*pathLength);
-
-    props.renderedCompProps.left=pointLoc.x + "px"
-    props.renderedCompProps.top=pointLoc.y + "px"
-
     return (
         <>
-        <props.renderedComp {...props.renderedCompProps}/>
+        <props.renderedComp station = {props.renderedCompProps.Station} left={pos.left} top={pos.top}/>
         </>
     )
 }

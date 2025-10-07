@@ -6,7 +6,7 @@ export default function Station(props)
 {
     return(
         <div id="station" style={{left: props.left,top: props.top}}>
-            {props.Station}
+            
         </div>
     )
 }
