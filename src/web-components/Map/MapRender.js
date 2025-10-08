@@ -2,22 +2,23 @@ import '../../styles/App.css';
 import PathDivRender from './PathDivRender.js';
 import Station from './Station.js';
 import { stations } from '../../static/data/Stations.js';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
  
 export default function MapRender() {
         const outerPathRef = useRef(null);
         const middlePathRef = useRef(null);
         const innerPathRef = useRef(null);
+        const mapContainer = useRef(null);
 
         const arr = [];
         for (var i=0;i<stations.length;i++) {
                 const stationPercValue=((100/(stations.length))*i)+(100/(stations.length));
-                arr.push(<PathDivRender renderedComp={Station} renderedCompProps={{"Station": stations[i]}} pathRef={middlePathRef} perc={stationPercValue}/>);
+                arr.push(<PathDivRender renderedComp={Station} renderedCompProps={{"Station": stations[i]}} pathRef={middlePathRef} containerRef={mapContainer} perc={stationPercValue}/>);
         }
 
         return (
             <>
-                <div id="map-render">
+                <div id="map-render" ref={mapContainer}>
                 {arr}
                 <svg id="map-svg" version="1.1" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1280 720">
                 <defs>
@@ -239,7 +240,7 @@ export default function MapRender() {
 
 function OuterPath(props) {
     return (
-        <path ref={props.ref} id="Layer2_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+        <path ref={props.ref} id="Layer2_0_1_STROKES" stroke="#000000" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
         M 381.7 84.5
         Q 366.75 84.55 344.45 88.3 343.75 88.35 343.15 88.5 296.75 96.55 247.9 123.5 246.95 124 246.1 124.6 198.65 151.8 157.85 212.6 157.7 212.9 157.55 213.1 131.15 253.2 121.05 303.45 115.65 329.75 114.95 359 114.95 360 114.95 361 115.65 390.2 121.05 416.65 131.15 466.7 157.45 506.95 157.9 507.6 158.4 508.35 199.3 568.9 246.85 596.05 247.4 596.35 247.9 596.65 296.8 623.55 343.15 631.65 343.9 631.7 344.6 631.85 366.8 635.45 381.7 635.55
         L 898.4 635.55
@@ -257,7 +258,7 @@ function OuterPath(props) {
 function MiddlePath(props) {
     return (
         <>
-<path ref={props.ref} id="Layer1_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+<path ref={props.ref} id="Layer1_0_1_STROKES" stroke="#000000" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
                 M 267.05 158.45
                 Q 310.25 134.65 351.05 127.6
                 L 350.95 127.6
@@ -294,7 +295,7 @@ function MiddlePath(props) {
 
 function InnerPath(props) {
     return (
-                <path ref={props.ref} id="Layer0_0_1_STROKES" stroke="#000000" stroke-width="0.3" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
+                <path ref={props.ref} id="Layer0_0_1_STROKES" stroke="#000000" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" fill="none" d="
                 M 357.9 166.9
                 Q 358.5 166.75 359.2 166.7 373.05 164.45 382.6 164.25
                 L 897.45 164.25

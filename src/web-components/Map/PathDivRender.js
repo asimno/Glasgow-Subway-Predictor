@@ -31,15 +31,23 @@ export default function PathDivRender(props)
         updatePosition();
 
         window.addEventListener("resize",updatePosition);
+        window.addEventListener("scroll",updatePosition);
     },[])
 
     if (!isReady) {
         return (<></>);
     }
 
+    const container = props.containerRef.current;
+    const bounds = container.getBoundingClientRect();
+    const offsetTop = container.offsetTop;
+
+    console.log(bounds.top);
+    console.log(container.offsetTop);
+
     return (
         <>
-        <props.renderedComp station = {props.renderedCompProps.Station} left={pos.left} top={pos.top}/>
+        <props.renderedComp station = {props.renderedCompProps.Station} left={pos.left} top={pos.top+(offsetTop-bounds.top)}/>
         </>
     )
 }

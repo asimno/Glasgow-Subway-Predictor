@@ -72,8 +72,8 @@
 #station {
     position: absolute;
     background-color: white;
-    width: 3vw;
-    height: 3vw;
+    width: 2.8vw;
+    height: 2.8vw;
     border-radius: 100%;
     transform: translate(-50%, -50%); 
 }
